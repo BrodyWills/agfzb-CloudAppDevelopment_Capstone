@@ -4,7 +4,10 @@
 
 {% block content %}
 
-<h2> Reviews for {{ review.dealership }} </h2>
+<h2> Reviews </h2>
+{% if user.is_authenticated %}
+    <a href="/djangoapp/dealer/{{ dealerId }}/review">Add Review</a>
+{% endif %}
 <div class="card-columns" style="width: 75rem">
     {% for review in reviews %}
         <div class="card">
